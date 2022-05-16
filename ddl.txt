@@ -1,0 +1,33 @@
+/*게시글*/
+CREATE TABLE `article` (
+  `article_no` int NOT NULL COMMENT '게시글 번호',
+  `title` varchar(45) DEFAULT NULL COMMENT '제목',
+  `content` text COMMENT '내용',
+  `writer_id` varchar(45) DEFAULT NULL COMMENT '작성자 id',
+  `file_master_no` int DEFAULT NULL COMMENT '파일 마스터 번호',
+  `frst_input_dt` datetime DEFAULT NULL COMMENT '최초입력일',
+  `late_updt_dt` datetime DEFAULT NULL COMMENT '최종수정일',
+  PRIMARY KEY (`article_no`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+/*게시판*/
+CREATE TABLE `board` (
+  `board_no` int NOT NULL COMMENT '게시판 번호',
+  `board_name` varchar(45) NOT NULL COMMENT '게시판 명',
+  `board_type` int DEFAULT NULL COMMENT '게시판 타입',
+  `frst_input_dt` datetime DEFAULT NULL COMMENT '최초입력일',
+  `last_updt_dt` datetime DEFAULT NULL COMMENT '최종수정일',
+  PRIMARY KEY (`board_no`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+/*사용자*/
+CREATE TABLE `user` (
+  `user_no` int NOT NULL COMMENT '사용자 번호',
+  `user_id` varchar(45) NOT NULL COMMENT '사용자 id',
+  `pw` varchar(45) NOT NULL COMMENT '비밀번호',
+  `name` varchar(45) DEFAULT NULL COMMENT '이름',
+  `nick_name` varchar(45) DEFAULT NULL COMMENT '별명',
+  `frst_input_dt` datetime DEFAULT NULL COMMENT '최초입력일',
+  `last_input_dt` datetime DEFAULT NULL COMMENT '최종수정일',
+  PRIMARY KEY (`user_no`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
